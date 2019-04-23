@@ -1,0 +1,25 @@
+{
+  "name": "yame.ts",
+  "version": "1.0.0",
+  "description": "Yet Another MIPS Emulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "tsc -w",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/13lank/YAME.ts.git"
+  },
+  "author": "Huang, Yangyi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/13lank/YAME.ts/issues"
+  },
+  "homepage": "https://github.com/13lank/YAME.ts#readme",
+  "devDependencies": {
+    "typescript": "^3.4.4"
+  }
+}
