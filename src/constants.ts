@@ -58,15 +58,16 @@ const enum INST_CODE {
   JAL = 0b000011
 };
 
-const enum DATA_CODE {
-  _2BYTE = 2,
-  _4BYTE = 4,
-  _8BYTE = 8,
-  _ASCII = 1,
-  _ASCIIZ = 1,
-  _BYTE = 1,
-  _DWORD = 8,
-  _HALF = 2,
-  _SPACE = 1,
-  _WORD = 4
-}
+const DATA_SIZE = {
+  '.2BYTE': 2,
+  '.4BYTE': 4,
+  '.8BYTE': 8,
+  '.ASCII': 1,
+  '.ASCIIZ': 1,
+  '.BYTE': 1,
+  '.DWORD': 8,
+  '.HALF': 2,
+  '.SPACE': 1,
+  '.WORD': 4
+};
+export { DATA_CODE, INST_CODE };
