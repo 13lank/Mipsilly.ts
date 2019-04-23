@@ -1,9 +1,9 @@
 # YAME.ts
 A simple implement of MISP emulator in TypeScript, assingment of ZJU Computer Organization course.
 
-- [] Assembler
-  - [] Parser
+- [ ] Assembler
+  - [ ] Parser
   - [x] constants
-  - [] registers
-- [] Deassembler
-- [] Simulater
+  - [ ] registers
+- [ ] Deassembler
+- [ ] Simulater
