@@ -1,0 +1,116 @@
+    j start 
+    add $zero, $zero, $zero
+    add $zero, $zero, $zero
+    add $zero, $zero, $zero 
+    add $zero, $zero, $zero 
+    add $zero, $zero, $zero 
+    add $zero, $zero, $zero 
+    add $zero, $zero, $zero 
+start:
+    nor $at, $zero, $zero
+    add $v1, $at, $at 
+    add $v1, $v1, $v1
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    nor $s4, $v1, $zero 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $v1, $v1, $v1 
+    add $a2, $v1, $v1 
+    add $v1, $a2, $a2 
+    add $a0, $v1, $v1 
+    add $t5, $a0, $a0 
+    add $t0, $t5, $t5 
+loop:
+    slt $v0, $at,$zero 
+    add $t6, $v0, $v0
+    add $t6, $t6, $t6 
+    nor $t2, $zero, $zero 
+    add $t2, $t2, $t2 
+loop1:
+    sw $a2, 0x4($v1) 
+    lw $a1, 0x0($v1) 
+    add $a1, $a1, $a1 
+    add $a1, $a1, $a1 
+    sw $a1, 0x0($v1) 
+    add $t1, $t1, $v0 
+    sw $t1, 0x0($a0) 
+    lw $t5, 0x14($zero) 
+loop2:
+    lw $a1, 0x0($v1) 
+    add $a1, $a1, $a1
+    add $a1, $a1, $a1 
+    sw $a1, 0x0($v1) 
+    lw $a1, 0x0($v1) 
+    and $t3, $a1, $t0 
+    add $t5, $t5, $v0 
+    beq $t5, $zero, C_init 
+l_next: 
+    lw $a1, 0x0($v1) 
+    add $s2, $t6, $t6 
+    add $s6, $s2, $s2 
+    add $s2, $s2, $s6 
+    and $t3, $a1, $s2 
+    beq $t3, $zero, L20 
+    beq $t3, $s2, L21
+    add $s2, $t6, $t6 
+    beq $t3, $s2, L22 
+    sw $t1, 0x0($a0) 
+    j loop2;
+L20:
+    beq $t2, $at, L4 
+    j L3
+L4:
+    nor $t2, $zero, $zero
+    add $t2, $t2, $t2
+L3:
+    sw $t2, 0x0($a0)
+    j loop2
+L21:
+    lw $t1, 0x60($s1)
+    sw $t1, 0x0($a0) 
+    j loop2
+L22:
+    lw $t1, 0x20($s1)
+    sw $t1, 0x0($a0)
+    j loop2
+C_init:
+    lw $t5, 0x14($zero)
+    add $t2, $t2, $t2
+    or $t2, $t2, $v0 
+    add $s1, $s1, $t6 
+    and $s1, $s1, $s4 
+    add $t1, $t1, $v0
+    beq $t1, $at, L6 
+    j L7
+L6:
+    add $t1, $zero, $t6
+    add $t1, $t1, $v0
+L7:
+    lw $a1, 0x0($v1) 
+    add $t3, $a1, $a1
+    add $t3, $t3, $t3
+    sw $t3, 0x0($v1) 
+    sw $a2, 0x4($v1)
+    lw  $a1, 0x0($v1)
+    and $t3, $a1, $t0 
+    j l_next
